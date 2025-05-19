@@ -22,7 +22,7 @@ function login(user) {
   return dispatch => {
     dispatch(request(user));
     axios
-      .post("http://localhost:8000/api/user/token/", user)
+      .post("http://89.104.70.60/api/user/token/", user)
       .then(res => {
         const token = res.data.token;
         localStorage.setItem("token", token);
@@ -58,7 +58,7 @@ function fetchEventList() {
     dispatch(fetchEventListPending());
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/event/events/", {
+      .get("http://89.104.70.60/api/event/events/", {
         headers: { Authorization: `Token ${token}` }
       })
       .then(res => {
@@ -96,7 +96,7 @@ function fetchTimeTable() {
     dispatch(fetchTimeTablePending());
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/timetable/days/", {
+      .get("http://89.104.70.60/api/timetable/days/", {
         headers: { Authorization: `Token ${token}` }
       })
       .then(res => {
@@ -137,7 +137,7 @@ function fetchJournal(className, subjectName) {
     const token = localStorage.getItem("token");
     axios
       .get(
-        `http://localhost:8000/api/journal/journals/?student_class=${className}&subject=${subjectName}`,
+        `http://89.104.70.60/api/journal/journals/?student_class=${className}&subject=${subjectName}`,
         { headers: { Authorization: `Token ${token}` } }
       )
       .then(res => {
@@ -183,7 +183,7 @@ function fetchHeader() {
     dispatch(fetchHeaderPending());
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/user/me/", {
+      .get("http://89.104.70.60/api/user/me/", {
         headers: { Authorization: `Token ${token}` }
       })
       .then(res => {
@@ -275,7 +275,7 @@ function fetchAccount() {
     dispatch(fetchAccountPending());
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/user/me/", {
+      .get("http://89.104.70.60/api/user/me/", {
         headers: { Authorization: `Token ${token}` }
       })
       .then(res => {
@@ -328,7 +328,7 @@ function fetchSchoolInfo() {
     dispatch(fetchSchoolInfoPending());
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/journal/school/", {
+      .get("http://89.104.70.60/api/journal/school/", {
         headers: { Authorization: `Token ${token}` }
       })
       .then(res => {

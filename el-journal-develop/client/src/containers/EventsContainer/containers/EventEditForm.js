@@ -33,7 +33,7 @@ const EventEditForm = ({
         const token = localStorage.getItem("token");
         axios
           .patch(
-            `http://localhost:8000/api/event/events/${event_id}/`,
+            `http://89.104.70.60/api/event/events/${event_id}/`,
             values,
             { headers: { Authorization: `Token ${token}` } }
           )
@@ -55,7 +55,7 @@ const EventEditForm = ({
     e.preventDefault();
     const token = localStorage.getItem("token");
     axios
-      .delete(`http://localhost:8000/api/event/events/${event_id}/`, {
+      .delete(`http://89.104.70.60/api/event/events/${event_id}/`, {
         headers: { Authorization: `Token ${token}` }
       })
       .then(res => {

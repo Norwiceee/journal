@@ -48,7 +48,7 @@ const EventAddForm = ({
   const addEvent = values => {
     const token = localStorage.getItem("token");
     axios
-      .post(`http://localhost:8000/api/event/events/`, values, {
+      .post(`http://89.104.70.60/api/event/events/`, values, {
         headers: {
           Authorization: `Token ${token}`
         }

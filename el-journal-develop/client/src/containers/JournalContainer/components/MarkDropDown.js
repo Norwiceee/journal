@@ -21,7 +21,7 @@ const MarkDropDown = ({ mark, subjectName, className, fetchJournal }) => {
       };
 
       axios
-        .post(`http://localhost:8000/api/journal/marks/`, newMark, {
+        .post(`http://89.104.70.60/api/journal/marks/`, newMark, {
           headers: { Authorization: `Token ${token}` }
         })
         .then(res => {
@@ -33,7 +33,7 @@ const MarkDropDown = ({ mark, subjectName, className, fetchJournal }) => {
     } else {
       axios
         .patch(
-          `http://localhost:8000/api/journal/marks/${mark.id}/`,
+          `http://89.104.70.60/api/journal/marks/${mark.id}/`,
           { value: value },
           { headers: { Authorization: `Token ${token}` } }
         )
